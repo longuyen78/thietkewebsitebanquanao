@@ -365,10 +365,12 @@
               <span>Sản phẩm đang chọn:</span>
               <strong id="selected-product-name">Áo thun cotton kem 2hand #01</strong>
               <p id="selected-product-size">Size món này: đang cập nhật</p>
-              <p id="selected-product-price">Đơn giá: 120.000đ · Chỉ còn 1 chiếc</p>
+              <p id="selected-product-price">Đơn giá: 120.000đ · Số lượng: 1 chiếc</p>
             </div>
             <p class="size-guide">
               Mỗi mã hàng chỉ có đúng 1 chiếc, không có nhiều size cho cùng một sản phẩm.
+              Cần hỗ trợ nhanh có thể liên hệ SĐT <strong>0971037740</strong> hoặc
+              <a href="https://www.facebook.com/nguyen.long.486500/" target="_blank" rel="noopener noreferrer">Facebook</a>.
             </p>
           </div>
 
@@ -442,7 +444,11 @@
         <strong>long2hand — Trang web bán đồ 2hand</strong>
         <p>Học phần FIT4014 · Trường Đại học Đại Nam · GVHD: ThS. Lê Thái Bảo</p>
       </div>
-      <p class="copyright">Liên hệ Gmail: nguyenbalong070820007@gmail.com</p>
+      <div class="contact-list">
+        <p class="copyright">SĐT: <a href="tel:0971037740">0971037740</a></p>
+        <p class="copyright">Gmail: <a href="mailto:nguyenbalong070820007@gmail.com">nguyenbalong070820007@gmail.com</a></p>
+        <p class="copyright">FB: <a href="https://www.facebook.com/nguyen.long.486500/" target="_blank" rel="noopener noreferrer">facebook.com/nguyen.long.486500</a></p>
+      </div>
     </div>
   </footer>
 
@@ -603,7 +609,7 @@
       const sizeText = matchedCard ? matchedCard.dataset.size : '';
       const buyer = document.getElementById('customer-name').value.trim();
 
-      orderFeedback.textContent = `Đã ghi nhận đơn 1 chiếc ${name} (${sizeText}, ${price}) cho ${buyer}. Liên hệ: nguyenbalong070820007@gmail.com.`;
+      orderFeedback.textContent = `Đã ghi nhận đơn 1 chiếc ${name} (${sizeText}, ${price}) cho ${buyer}. Hỗ trợ: SĐT 0971037740 · Gmail nguyenbalong070820007@gmail.com.`;
     });
 
     syncSelectedSummary();

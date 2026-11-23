@@ -479,3 +479,25 @@ body {
     grid-template-columns: 1fr;
   }
 }
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: right;
+}
+
+.contact-list a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 560px) {
+  .contact-list {
+    text-align: left;
+  }
+}
