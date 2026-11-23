@@ -501,3 +501,124 @@ body {
     text-align: left;
   }
 }
+.hidden {
+  display: none;
+}
+
+.bill-box {
+  margin-top: 22px;
+  background-color: var(--bg-surface);
+  border: 1px dashed var(--accent);
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.bill-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 14px;
+}
+
+.bill-header h3 {
+  font-size: 1.2rem;
+}
+
+.bill-code {
+  background-color: var(--bg-soft);
+  border: 1px solid var(--border);
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+.bill-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 18px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.bill-meta strong {
+  color: var(--text-main);
+}
+
+.bill-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+.bill-table th,
+.bill-table td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.bill-table th {
+  background-color: var(--bg-soft);
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.bill-price {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.bill-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.bill-support {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+
+.bill-support a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+@media (max-width: 560px) {
+  .bill-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .bill-box {
+    padding: 18px 14px;
+  }
+}
+
+@media print {
+  .site-header,
+  .hero,
+  .category-section,
+  .catalog-section,
+  .purchase-box,
+  .reviews-section,
+  .site-footer,
+  #print-bill-btn {
+    display: none !important;
+  }
+
+  .bill-box {
+    display: block !important;
+    border: 1px solid #2D3330;
+    margin-top: 0;
+  }
+}

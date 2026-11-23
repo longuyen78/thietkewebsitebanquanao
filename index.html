@@ -417,8 +417,52 @@
             </div>
 
             <button type="submit" class="btn-primary btn-submit">Xác nhận đặt mua</button>
-            <p id="order-feedback" class="order-feedback" aria-live="polite"></p>
           </form>
+        </div>
+
+        <!-- Bill sản phẩm sau khi nhấn xác nhận đặt mua -->
+        <div id="bill-box" class="bill-box hidden" aria-live="polite">
+          <div class="bill-header">
+            <div>
+              <span class="eyebrow">Hóa đơn / Bill sản phẩm</span>
+              <h3>BILL ĐẶT MUA — long2hand</h3>
+            </div>
+            <span id="bill-code" class="bill-code">#L2H-0000</span>
+          </div>
+
+          <div class="bill-meta">
+            <p><strong>Thời gian:</strong> <span id="bill-time"></span></p>
+            <p><strong>Người nhận:</strong> <span id="bill-name"></span></p>
+            <p><strong>SĐT người nhận:</strong> <span id="bill-phone"></span></p>
+            <p><strong>Địa chỉ giao:</strong> <span id="bill-address"></span></p>
+          </div>
+
+          <table class="bill-table">
+            <thead>
+              <tr>
+                <th>Sản phẩm 2hand</th>
+                <th>Size / Cỡ</th>
+                <th>SL</th>
+                <th>Thành tiền</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="bill-item-name"></td>
+                <td id="bill-item-size"></td>
+                <td>1 chiếc</td>
+                <td id="bill-item-price" class="bill-price"></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="bill-footer">
+            <div class="bill-support">
+              <p>Hỗ trợ đơn hàng: <strong>0971037740</strong> · <strong>nguyenbalong070820007@gmail.com</strong></p>
+              <p>Facebook: <a href="https://www.facebook.com/nguyen.long.486500/" target="_blank" rel="noopener noreferrer">facebook.com/nguyen.long.486500</a></p>
+            </div>
+            <button type="button" id="print-bill-btn" class="btn-secondary">In / Lưu bill</button>
+          </div>
         </div>
       </div>
     </section>
@@ -462,8 +506,18 @@
     const selectedPriceEl = document.getElementById('selected-product-price');
     const purchaseSection = document.getElementById('mua-hang');
     const purchaseForm = document.getElementById('purchase-form');
-    const orderFeedback = document.getElementById('order-feedback');
     const reviewsGrid = document.getElementById('reviews-grid');
+
+    const billBox = document.getElementById('bill-box');
+    const billCodeEl = document.getElementById('bill-code');
+    const billTimeEl = document.getElementById('bill-time');
+    const billNameEl = document.getElementById('bill-name');
+    const billPhoneEl = document.getElementById('bill-phone');
+    const billAddressEl = document.getElementById('bill-address');
+    const billItemNameEl = document.getElementById('bill-item-name');
+    const billItemSizeEl = document.getElementById('bill-item-size');
+    const billItemPriceEl = document.getElementById('bill-item-price');
+    const printBillBtn = document.getElementById('print-bill-btn');
 
     const CLOTHING_SIZES = ['S', 'M', 'L', 'XL'];
     const SHOE_SIZES = ['38', '39', '40', '41', '42'];
@@ -511,10 +565,9 @@
     }
 
     function randomStar3To5() {
-      return Math.floor(Math.random() * 3) + 3; // Ngẫu nhiên từ 3 đến 5 sao
+      return Math.floor(Math.random() * 3) + 3;
     }
 
-    // Gán ngẫu nhiên 1 size cho từng sản phẩm (mỗi sản phẩm chỉ có 1 chiếc)
     productCards.forEach((card) => {
       const isShoe = card.dataset.category === 'shoes';
       const assignedSize = isShoe ? `Cỡ ${randomItem(SHOE_SIZES)}` : `Size ${randomItem(CLOTHING_SIZES)}`;
@@ -586,7 +639,6 @@
         productSelect.value = optionValue;
       }
       syncSelectedSummary();
-      orderFeedback.textContent = '';
       purchaseSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
@@ -606,10 +658,29 @@
       e.preventDefault();
       const [name, price] = productSelect.value.split('|');
       const matchedCard = getCardByName(name);
-      const sizeText = matchedCard ? matchedCard.dataset.size : '';
+      const sizeText = matchedCard ? matchedCard.dataset.size : 'Size M';
       const buyer = document.getElementById('customer-name').value.trim();
+      const phone = document.getElementById('customer-phone').value.trim();
+      const address = document.getElementById('customer-address').value.trim();
 
-      orderFeedback.textContent = `Đã ghi nhận đơn 1 chiếc ${name} (${sizeText}, ${price}) cho ${buyer}. Hỗ trợ: SĐT 0971037740 · Gmail nguyenbalong070820007@gmail.com.`;
+      const billNumber = `#L2H-${Math.floor(1000 + Math.random() * 9000)}`;
+      const nowStr = new Date().toLocaleString('vi-VN');
+
+      billCodeEl.textContent = billNumber;
+      billTimeEl.textContent = nowStr;
+      billNameEl.textContent = buyer;
+      billPhoneEl.textContent = phone;
+      billAddressEl.textContent = address;
+      billItemNameEl.textContent = name;
+      billItemSizeEl.textContent = sizeText;
+      billItemPriceEl.textContent = price;
+
+      billBox.classList.remove('hidden');
+      billBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+
+    printBillBtn.addEventListener('click', () => {
+      window.print();
     });
 
     syncSelectedSummary();
