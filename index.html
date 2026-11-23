@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nếp Mộc — Cửa hàng trang phục tối giản</title>
+  <title>long2hand — Cửa hàng trang phục tối giản</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#top" class="brand">NẾP MỘC</a>
+      <a href="#top" class="brand">long2hand</a>
       <nav class="nav-links" aria-label="Điều hướng chính">
+        <a href="#danh-muc">Danh mục</a>
         <a href="#bo-suu-tap">6 Bộ trang phục</a>
-        <a href="#huong-dan">Chọn size</a>
-        <a href="#lien-he">Liên hệ</a>
+        <a href="#mua-hang">Mua hàng</a>
       </nav>
     </div>
   </header>
@@ -21,134 +21,177 @@
   <main id="top">
     <section class="hero">
       <div class="container hero-box">
-        <p class="eyebrow">Bài tập lớn FIT4014 · Thiết kế web tối giản</p>
-        <h1>Trang phục mặc hằng ngày, nhẹ mắt và dễ phối</h1>
+        <p class="eyebrow">long2hand · Bài tập lớn FIT4014</p>
+        <h1>Trang phục tối giản, nhẹ mắt và dễ chọn mua</h1>
         <p class="hero-desc">
-          Tuyển chọn 6 set quần áo cơ bản theo tông màu trung tính dịu nhẹ,
-          chú trọng phom dáng thoải mái và bố cục gọn gàng trên cả máy tính lẫn điện thoại.
+          Tuyển chọn 6 bộ quần áo tông màu trung tính dịu nhẹ. Chọn danh mục ở mục riêng,
+          bấm vào bộ trang phục bạn muốn để chuyển thẳng xuống phần đặt mua.
         </p>
-        <a href="#bo-suu-tap" class="btn-primary">Xem 6 bộ sản phẩm</a>
+        <a href="#danh-muc" class="btn-primary">Xem danh mục</a>
       </div>
     </section>
 
+    <!-- Phần danh mục quần áo riêng -->
+    <section id="danh-muc" class="category-section">
+      <div class="container">
+        <div class="category-bar">
+          <div>
+            <h2>Danh mục quần áo</h2>
+            <p id="category-status">Đang xem: Tất cả (6 bộ)</p>
+          </div>
+          <div class="category-buttons" role="group" aria-label="Lọc danh mục quần áo">
+            <button type="button" class="cat-btn active" data-filter="all">Tất cả (6)</button>
+            <button type="button" class="cat-btn" data-filter="top-set">Áo &amp; Khoác phối (4)</button>
+            <button type="button" class="cat-btn" data-filter="bottom-set">Quần &amp; Váy phối (2)</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Danh sách 6 bộ quần áo -->
     <section id="bo-suu-tap" class="catalog-section">
       <div class="container">
-        <div class="section-head">
-          <h2>Danh sách 6 bộ quần áo</h2>
-          <p>Mỗi bộ gồm áo và quần/váy phối sẵn, phù hợp đi học, đi làm và dạo phố.</p>
-        </div>
-
         <div class="product-grid">
-          <!-- Bộ 1 -->
-          <article class="product-card">
+          <article
+            class="product-card"
+            data-category="top-set"
+            data-name="Bộ 01: Set Thun Kem &amp; Quần Suông Đá"
+            data-price="380.000đ"
+            tabindex="0"
+          >
             <div class="thumb">
               <img
                 src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80"
-                alt="Bộ 1: Áo thun cotton trắng kem phối quần tây ống suông xám đá"
+                alt="Bộ 01: Set Thun Kem &amp; Quần Suông Đá"
               />
             </div>
             <div class="card-body">
-              <span class="tag">Bộ 01 · Dạo phố</span>
+              <span class="tag">Bộ 01 · Áo &amp; Khoác phối</span>
               <h3>Set Thun Kem &amp; Quần Suông Đá</h3>
-              <p class="desc">Áo thun cotton 230gsm mềm mịn kết hợp quần ống suông đứng dáng.</p>
+              <p class="desc">Áo thun cotton mềm mịn kết hợp quần ống suông đứng dáng, dễ mặc hằng ngày.</p>
               <div class="card-footer">
                 <strong class="price">380.000đ</strong>
-                <span class="size-note">Size S · M · L</span>
+                <span class="action-hint">Bấm để mua →</span>
               </div>
             </div>
           </article>
 
-          <!-- Bộ 2 -->
-          <article class="product-card">
+          <article
+            class="product-card"
+            data-category="top-set"
+            data-name="Bộ 02: Set Sơ Mi Rêu Nhạt &amp; Kaki Be"
+            data-price="460.000đ"
+            tabindex="0"
+          >
             <div class="thumb">
               <img
                 src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&w=800&q=80"
-                alt="Bộ 2: Áo sơ mi linen xanh rêu nhạt phối quần kaki be"
+                alt="Bộ 02: Set Sơ Mi Rêu Nhạt &amp; Kaki Be"
               />
             </div>
             <div class="card-body">
-              <span class="tag">Bộ 02 · Đi làm</span>
+              <span class="tag">Bộ 02 · Áo &amp; Khoác phối</span>
               <h3>Set Sơ Mi Rêu Nhạt &amp; Kaki Be</h3>
-              <p class="desc">Vải linen thoáng khí, tông xanh rêu dịu kết hợp quần kaki màu be.</p>
+              <p class="desc">Chất liệu thoáng nhẹ, tông xanh rêu dịu phối cùng quần kaki màu be trung tính.</p>
               <div class="card-footer">
                 <strong class="price">460.000đ</strong>
-                <span class="size-note">Size S · M · L</span>
+                <span class="action-hint">Bấm để mua →</span>
               </div>
             </div>
           </article>
 
-          <!-- Bộ 3 -->
-          <article class="product-card">
+          <article
+            class="product-card"
+            data-category="bottom-set"
+            data-name="Bộ 03: Set Len Yến Mạch &amp; Chân Váy Midi"
+            data-price="490.000đ"
+            tabindex="0"
+          >
             <div class="thumb">
               <img
                 src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80"
-                alt="Bộ 3: Áo len mỏng màu yến mạch phối chân váy midi nâu nhạt"
+                alt="Bộ 03: Set Len Yến Mạch &amp; Chân Váy Midi"
               />
             </div>
             <div class="card-body">
-              <span class="tag">Bộ 03 · Thu đông nhẹ</span>
+              <span class="tag">Bộ 03 · Quần &amp; Váy phối</span>
               <h3>Set Len Yến Mạch &amp; Chân Váy Midi</h3>
-              <p class="desc">Áo dệt kim mỏng nhẹ không gây bí, đi cùng chân váy dài qua gối.</p>
+              <p class="desc">Áo dệt kim mỏng nhẹ không gây bí, kết hợp chân váy dài dịu mắt.</p>
               <div class="card-footer">
                 <strong class="price">490.000đ</strong>
-                <span class="size-note">Size S · M · L</span>
+                <span class="action-hint">Bấm để mua →</span>
               </div>
             </div>
           </article>
 
-          <!-- Bộ 4 -->
-          <article class="product-card">
+          <article
+            class="product-card"
+            data-category="top-set"
+            data-name="Bộ 04: Set Polo Ghi Nhạt &amp; Quần Âu Than"
+            data-price="440.000đ"
+            tabindex="0"
+          >
             <div class="thumb">
               <img
-                src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80"
-                alt="Bộ 4: Áo polo dệt kim ghi nhạt phối quần âu than chì"
+                src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&amp;fit=crop&w=800&q=80"
+                alt="Bộ 04: Set Polo Ghi Nhạt &amp; Quần Âu Than"
               />
             </div>
             <div class="card-body">
-              <span class="tag">Bộ 04 · Lịch sự</span>
+              <span class="tag">Bộ 04 · Áo &amp; Khoác phối</span>
               <h3>Set Polo Ghi Nhạt &amp; Quần Âu Than</h3>
-              <p class="desc">Phom gọn gàng, lịch sự cho buổi học nhóm, thuyết trình hoặc gặp gỡ.</p>
+              <p class="desc">Phom gọn gàng, lịch sự, phù hợp đi học, thuyết trình hoặc gặp gỡ.</p>
               <div class="card-footer">
                 <strong class="price">440.000đ</strong>
-                <span class="size-note">Size M · L · XL</span>
+                <span class="action-hint">Bấm để mua →</span>
               </div>
             </div>
           </article>
 
-          <!-- Bộ 5 -->
-          <article class="product-card">
+          <article
+            class="product-card"
+            data-category="top-set"
+            data-name="Bộ 05: Set Overshirt Nâu Đất &amp; Jean Trầm"
+            data-price="530.000đ"
+            tabindex="0"
+          >
             <div class="thumb">
               <img
                 src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=800&q=80"
-                alt="Bộ 5: Áo khoác overshirt nâu đất phối áo thun trắng và quần jean xanh đậm"
+                alt="Bộ 05: Set Overshirt Nâu Đất &amp; Jean Trầm"
               />
             </div>
             <div class="card-body">
-              <span class="tag">Bộ 05 · Năng động</span>
+              <span class="tag">Bộ 05 · Áo &amp; Khoác phối</span>
               <h3>Set Overshirt Nâu Đất &amp; Jean Trầm</h3>
-              <p class="desc">Áo khoác dáng sơ mi màu nâu đất ấm áp, dễ mặc quanh năm.</p>
+              <p class="desc">Áo khoác dáng sơ mi màu nâu đất ấm áp, dễ phối nhiều hoàn cảnh.</p>
               <div class="card-footer">
                 <strong class="price">530.000đ</strong>
-                <span class="size-note">Size M · L · XL</span>
+                <span class="action-hint">Bấm để mua →</span>
               </div>
             </div>
           </article>
 
-          <!-- Bộ 6 -->
-          <article class="product-card">
+          <article
+            class="product-card"
+            data-category="bottom-set"
+            data-name="Bộ 06: Set Cardigan Cát &amp; Quần Ống Rộng"
+            data-price="470.000đ"
+            tabindex="0"
+          >
             <div class="thumb">
               <img
-                src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80"
-                alt="Bộ 6: Áo cardigan mỏng màu cát phối quần ống rộng màu đá phấn"
+                src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&amp;fit=crop&w=800&q=80"
+                alt="Bộ 06: Set Cardigan Cát &amp; Quần Ống Rộng"
               />
             </div>
             <div class="card-body">
-              <span class="tag">Bộ 06 · Tối giản</span>
+              <span class="tag">Bộ 06 · Quần &amp; Váy phối</span>
               <h3>Set Cardigan Cát &amp; Quần Ống Rộng</h3>
-              <p class="desc">Bảng màu hài hòa, nhẹ mắt, thoải mái cho ngày dài di chuyển.</p>
+              <p class="desc">Tông màu cát và đá phấn hài hòa, thoải mái khi di chuyển cả ngày.</p>
               <div class="card-footer">
                 <strong class="price">470.000đ</strong>
-                <span class="size-note">Size S · M · L</span>
+                <span class="action-hint">Bấm để mua →</span>
               </div>
             </div>
           </article>
@@ -156,37 +199,159 @@
       </div>
     </section>
 
-    <section id="huong-dan" class="info-section">
-      <div class="container info-grid">
-        <div class="info-box">
-          <h3>Gợi ý chọn size nhanh</h3>
-          <ul>
-            <li><strong>Size S:</strong> 45kg – 53kg (cao 1m50 – 1m62)</li>
-            <li><strong>Size M:</strong> 54kg – 63kg (cao 1m58 – 1m70)</li>
-            <li><strong>Size L:</strong> 64kg – 74kg (cao 1m65 – 1m78)</li>
-            <li><strong>Size XL:</strong> 75kg – 85kg (cao 1m70 – 1m83)</li>
-          </ul>
-        </div>
-        <div class="info-box">
-          <h3>Cam kết đơn giản &amp; rõ ràng</h3>
-          <p>
-            Giao diện sử dụng nền kem nhạt (<code>#FAF9F6</code>), thẻ trắng ngà (<code>#FFFFFF</code>)
-            và chữ xám than (<code>#2D3330</code>) để giữ độ tương phản dễ đọc mà không chói mắt.
-          </p>
-          <p>Đổi size trong 7 ngày nếu sản phẩm còn nguyên tem và chưa qua sử dụng.</p>
+    <!-- Phần mua hàng -->
+    <section id="mua-hang" class="purchase-section">
+      <div class="container">
+        <div class="purchase-box">
+          <div class="purchase-info">
+            <p class="eyebrow">Đặt mua sản phẩm</p>
+            <h2>Thông tin mua hàng tại long2hand</h2>
+            <p class="purchase-sub">
+              Bấm vào bất kỳ bộ trang phục nào ở phía trên để tự động chọn sản phẩm này và chuyển xuống đây.
+            </p>
+            <div class="selected-summary">
+              <span>Sản phẩm đang chọn:</span>
+              <strong id="selected-product-name">Bộ 01: Set Thun Kem &amp; Quần Suông Đá</strong>
+              <p id="selected-product-price">Đơn giá: 380.000đ</p>
+            </div>
+            <p class="size-guide">
+              <strong>Gợi ý size:</strong> S (45–53kg) · M (54–63kg) · L (64–74kg) · XL (75–85kg). Đổi size trong 7 ngày.
+            </p>
+          </div>
+
+          <form id="purchase-form" class="order-form">
+            <div class="field">
+              <label for="product-select">Bộ trang phục</label>
+              <select id="product-select" name="product">
+                <option value="Bộ 01: Set Thun Kem & Quần Suông Đá|380.000đ">Bộ 01: Set Thun Kem &amp; Quần Suông Đá — 380.000đ</option>
+                <option value="Bộ 02: Set Sơ Mi Rêu Nhạt & Kaki Be|460.000đ">Bộ 02: Set Sơ Mi Rêu Nhạt &amp; Kaki Be — 460.000đ</option>
+                <option value="Bộ 03: Set Len Yến Mạch & Chân Váy Midi|490.000đ">Bộ 03: Set Len Yến Mạch &amp; Chân Váy Midi — 490.000đ</option>
+                <option value="Bộ 04: Set Polo Ghi Nhạt & Quần Âu Than|440.000đ">Bộ 04: Set Polo Ghi Nhạt &amp; Quần Âu Than — 440.000đ</option>
+                <option value="Bộ 05: Set Overshirt Nâu Đất & Jean Trầm|530.000đ">Bộ 05: Set Overshirt Nâu Đất &amp; Jean Trầm — 530.000đ</option>
+                <option value="Bộ 06: Set Cardigan Cát & Quần Ống Rộng|470.000đ">Bộ 06: Set Cardigan Cát &amp; Quần Ống Rộng — 470.000đ</option>
+              </select>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="size-select">Size</label>
+                <select id="size-select" name="size">
+                  <option value="S">Size S</option>
+                  <option value="M" selected>Size M</option>
+                  <option value="L">Size L</option>
+                  <option value="XL">Size XL</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="qty-input">Số lượng</label>
+                <input id="qty-input" name="qty" type="number" min="1" max="20" value="1" required />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="customer-name">Họ và tên người nhận</label>
+              <input id="customer-name" name="customerName" type="text" placeholder="Nhập họ và tên" required />
+            </div>
+
+            <div class="field">
+              <label for="customer-phone">Số điện thoại</label>
+              <input id="customer-phone" name="customerPhone" type="tel" placeholder="Nhập số điện thoại" required />
+            </div>
+
+            <div class="field">
+              <label for="customer-address">Địa chỉ nhận hàng</label>
+              <input id="customer-address" name="customerAddress" type="text" placeholder="Số nhà, đường, phường/xã, tỉnh/thành" required />
+            </div>
+
+            <button type="submit" class="btn-primary btn-submit">Xác nhận đặt mua</button>
+            <p id="order-feedback" class="order-feedback" aria-live="polite"></p>
+          </form>
         </div>
       </div>
     </section>
   </main>
 
-  <footer id="lien-he" class="site-footer">
+  <footer class="site-footer">
     <div class="container footer-inner">
       <div>
-        <strong>NẾP MỘC — Trang phục tối giản</strong>
+        <strong>long2hand</strong>
         <p>Học phần FIT4014 · Trường Đại học Đại Nam · GVHD: ThS. Lê Thái Bảo</p>
       </div>
-      <p class="copyright">Liên hệ đặt mẫu: nep-moc@example.edu.vn</p>
+      <p class="copyright">Liên hệ: long2hand@example.edu.vn</p>
     </div>
   </footer>
+
+  <script>
+    const filterButtons = document.querySelectorAll('.cat-btn');
+    const productCards = document.querySelectorAll('.product-card');
+    const categoryStatus = document.getElementById('category-status');
+    const productSelect = document.getElementById('product-select');
+    const selectedNameEl = document.getElementById('selected-product-name');
+    const selectedPriceEl = document.getElementById('selected-product-price');
+    const purchaseSection = document.getElementById('mua-hang');
+    const purchaseForm = document.getElementById('purchase-form');
+    const orderFeedback = document.getElementById('order-feedback');
+
+    function syncSelectedSummary() {
+      const [name, price] = productSelect.value.split('|');
+      selectedNameEl.textContent = name;
+      selectedPriceEl.textContent = 'Đơn giá: ' + price;
+    }
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        let visibleCount = 0;
+
+        productCards.forEach((card) => {
+          const match = filter === 'all' || card.dataset.category === filter;
+          card.classList.toggle('hidden-card', !match);
+          if (match) visibleCount += 1;
+        });
+
+        categoryStatus.textContent = `Đang xem: ${btn.textContent} (${visibleCount} bộ)`;
+      });
+    });
+
+    function selectProductAndGoToBuy(card) {
+      const name = card.dataset.name;
+      const price = card.dataset.price;
+      const optionValue = `${name}|${price}`;
+
+      if ([...productSelect.options].some((opt) => opt.value === optionValue)) {
+        productSelect.value = optionValue;
+      }
+      syncSelectedSummary();
+      orderFeedback.textContent = '';
+      purchaseSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    productCards.forEach((card) => {
+      card.addEventListener('click', () => selectProductAndGoToBuy(card));
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          selectProductAndGoToBuy(card);
+        }
+      });
+    });
+
+    productSelect.addEventListener('change', syncSelectedSummary);
+
+    purchaseForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const [name, price] = productSelect.value.split('|');
+      const size = document.getElementById('size-select').value;
+      const qty = document.getElementById('qty-input').value;
+      const buyer = document.getElementById('customer-name').value.trim();
+
+      orderFeedback.textContent = `Đã ghi nhận yêu cầu mua ${qty}x ${name} (${size}, ${price}) cho ${buyer}.`;
+    });
+
+    syncSelectedSummary();
+  </script>
 </body>
 </html>
